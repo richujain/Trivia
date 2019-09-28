@@ -1,26 +1,26 @@
-<?php error_reporting(0);
-$servername = "localhost";
-$username = "root";
-$password = "root";
-
-// Create connection
-$conn = new mysqli($servername, $username, $password);
+<?php
+$con = mysqli_connect("localhost","root","root","trivia");
 
 // Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-//echo "Connected successfully";
+if (mysqli_connect_errno())
+  {
+  echo "Failed to connect to MySQL: " . mysqli_connect_error();
+  }
+  
+
 $username = $_POST['username'];
 $password = $_POST['password'];
 
 $sql = "SELECT * FROM tbl_login WHERE username='$username' AND password='$password'";
-  $result = mysqli_query($conn, $sql);
-  echo "result is " . $result;
+  $result = mysqli_query($con, $sql);
   if ($row = mysqli_fetch_assoc($result)) {
-    echo "You are logged in!   " .$sql;
+    session_start();
+    $_SESSION["username"] = $username;
+    $_SESSION["lid"] = $row['lid'];
+    header("Location: home/index.php"); /* Redirect browser */
+    exit();
 
   } else {
-    echo "Your username or password is incorrect!   " .$sql;
+    echo "Your username or password is incorrect!";
   }
 ?>
