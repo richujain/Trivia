@@ -21,6 +21,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'><!--web font-->
 <!-- //web font --> 
 </head>
+<?php
+	session_start();
+	if (! empty($_SESSION['logged_in']))
+	{
+		header("Location: home/index.php"); /* Redirect browser */
+    	exit();
+	}
+?>
 <body>
 	<!-- main-agileits -->
 	<div class="agileits">
@@ -41,7 +49,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<input class='btn btn-lg' type='submit' value='SUBMIT'>
 				</div>
 				<div style="padding-top:20px">
-					<a href="register.php">Not Registered? Click Here!</a>
+					<a href="register.html">Not Registered? Click Here!</a>
 				</div>
 			</form>
 		</div>	

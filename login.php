@@ -15,6 +15,7 @@ $sql = "SELECT * FROM tbl_login WHERE username='$username' AND password='$passwo
   $result = mysqli_query($con, $sql);
   if ($row = mysqli_fetch_assoc($result)) {
     session_start();
+    $_SESSION['logged_in'] = true;
     $_SESSION["username"] = $username;
     $_SESSION["lid"] = $row['lid'];
     header("Location: home/index.php"); /* Redirect browser */

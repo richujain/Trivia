@@ -29,13 +29,18 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <link rel="stylesheet" href="css/icon-font.min.css" type='text/css' />
 <!-- //lined-icons -->
 </head> 
-<script>
-	function logout(){
-		<?php
-			echo "hi";
-		?>
-	}
-</script>
+<?php
+	function logout() {
+		session_start();
+		session_destroy();
+		header("Location: ../index.php"); 
+		exit();
+  }
+
+  if (isset($_GET['logout'])) {
+    logout();
+  }	
+  ?>
 <?php
 session_start();
 $username = $_SESSION["username"];
@@ -71,7 +76,7 @@ $username = $_SESSION["username"];
 										<ul class="dropdown-menu drp-mnu">
 											<li> <a href="#"><i class="fa fa-cog"></i> Settings</a> </li> 
 											<li> <a href="#"><i class="fa fa-user"></i> Profile</a> </li> 
-											<li> <a href="#" onclick="logout();><i class="fa fa-sign-out"></i> Logout</a> </li>
+											<li> <a href="index.php?logout=true"><i class="fa fa-sign-out"></i> Logout</a> </li>
 										</ul>
 									</li>
 								</ul>
@@ -83,11 +88,12 @@ $username = $_SESSION["username"];
 					<div class="col-md-6 four-grid">
 						<div class="four-agileits">
 							<div class="icon">
-								<i class="glyphicon glyphicon-user" aria-hidden="true"></i>
+								<img src="images/technology.png" height="100px" width="100px" />
+								<!--<i class="glyphicon glyphicon-user" aria-hidden="true"></i>-->
 							</div>
 							<div class="four-text">
-								<h3>User</h3>
-								<h4> 24,420  </h4>
+								<h3>Information Technology</h3>
+								<h4> 0  </h4>
 								
 							</div>
 							
@@ -96,11 +102,12 @@ $username = $_SESSION["username"];
 					<div class="col-md-6 four-grid">
 						<div class="four-agileinfo">
 							<div class="icon">
-								<i class="glyphicon glyphicon-list-alt" aria-hidden="true"></i>
+							<img src="images/science.png" height="100px" width="100px" />
+								<!--<i class="glyphicon glyphicon-list-alt" aria-hidden="true"></i>-->
 							</div>
 							<div class="four-text">
-								<h3>Clients</h3>
-								<h4>15,520</h4>
+								<h3>Science</h3>
+								<h4>0</h4>
 
 							</div>
 							
@@ -184,7 +191,7 @@ $username = $_SESSION["username"];
 						<div style="border-top:1px ridge rgba(255, 255, 255, 0.15)"></div>
                            <div class="menu">
 									<ul id="menu" >
-										<li><a href="index.html"><i class="fa fa-tachometer"></i> <span>Dashboard</span><div class="clearfix"></div></a></li>
+										<li><a href="index.php"><i class="fa fa-tachometer"></i> <span>Dashboard</span><div class="clearfix"></div></a></li>
 										
 										
 										 <li id="menu-academico" ><a href="inbox.html"><i class="fa fa-envelope nav_icon"></i><span>Inbox</span><div class="clearfix"></div></a></li>
