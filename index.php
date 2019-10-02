@@ -49,7 +49,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<input class='btn btn-lg' type='submit' value='SUBMIT'>
 				</div>
 				<div style="padding-top:20px">
-					<a href="register.html">Not Registered? Click Here!</a>
+					<a href="register.php">Not Registered? Click Here!</a>
 				</div>
 			</form>
 		</div>	

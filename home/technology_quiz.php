@@ -4,6 +4,7 @@ Author URL: http://w3layouts.com
 License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 -->
+
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -85,15 +86,32 @@ $username = $_SESSION["username"];
 							
 				     <div class="clearfix"> </div>	
 				</div>
-
-
-
-
 		
 		<div class="four-grids">
   			<center>
   			<table>
   				<tr>
+  				<?php
+
+// Create connection
+$conn = mysqli_connect("localhost","root","root","trivia");
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+?>
+
+				<?php
+				  $count = 0;
+				  $answered = 0;
+				  $sql = mysqli_query($conn,"SELECT count(*) as total from tbl_quiz where quiz_category=0");
+				  $row = mysqli_fetch_assoc($sql);
+				  $number_of_questions = $row['total'];
+
+
+				?>
+
 				  <th colspan="2" style="text-align:center"><h1>Technology that helps companies change business by allowing them to use new methods is called:</h1></th>
 				</tr>
 				<tr>
