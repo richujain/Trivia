@@ -7,7 +7,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Trivia Welcome Page</title>
+<title>Technology Quiz Page</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="" />
@@ -28,14 +28,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <link rel="stylesheet" href="css/icon-font.min.css" type='text/css' />
 <!-- //lined-icons -->
 </head> 
-<script>
-	function technology(){
-		window.location.href = "technology_quiz.php";
-	}
-	function science(){
-		window.location.href = "science_quiz.php";
-	}
-</script>
 <?php
 	function logout() {
 		session_start();
@@ -63,7 +55,9 @@ $username = $_SESSION["username"];
 					<div class="logo-w3-agile">
 								<h1><a href="index.html">Trivia</a></h1>
 							</div>
-					
+							<div class="profile_details w3l" style="background-color:grey;margin-left:150px;">
+								  <h1  style="color:white;"><b>IT QUIZ</b></h1>
+							</div>
 						 
 						<div class="profile_details w3l" style="float: right">		
 								<ul>
@@ -91,74 +85,34 @@ $username = $_SESSION["username"];
 							
 				     <div class="clearfix"> </div>	
 				</div>
-		<div class="four-grids">
-					<div class="col-md-6 four-grid">
-						<div class="four-agileits" onclick="technology()">
-							<div class="icon">
-								<img src="images/technology.png" height="100px" width="100px" />
-								<!--<i class="glyphicon glyphicon-user" aria-hidden="true"></i>-->
-							</div>
-							<div class="four-text">
-								<h3>Information Technology</h3>
-								<h4> 0  </h4>
-								
-							</div>
-							
-						</div>
-					</div>
-					<div class="col-md-6 four-grid">
-						<div class="four-agileinfo" onclick="science()">
-							<div class="icon">
-							<img src="images/science.png" height="100px" width="100px" />
-								<!--<i class="glyphicon glyphicon-list-alt" aria-hidden="true"></i>-->
-							</div>
-							<div class="four-text">
-								<h3>Science</h3>
-								<h4>0</h4>
 
-							</div>
-							
-						</div>
-					</div>
-					<div class="clearfix"></div>
-				</div>
+
+
+
+		
+		<div class="four-grids">
+  			<center>
+  			<table>
+  				<tr>
+				  <th colspan="2" style="text-align:center"><h1>Technology that helps companies change business by allowing them to use new methods is called:</h1></th>
+				</tr>
+				<tr>
+  					<td  style="text-align:center;background-color:grey;margin:20px"><h3>data processing</h3></td>
+					<td style="text-align:center"><h3>information systems</h3></td>
+				  <tr>
+				  <tr>
+  					<td style="text-align:center"><h3>information technology</h3></td>
+					<td style="text-align:center"><h3>virtualization</h3></td>
+				  <tr>
+			</table>
+			</center>	
+			<div class="clearfix"></div>
+		</div>
 <!--//four-grids here-->
-<!--agileinfo-grap-->
-<div class="agileinfo-grap">
-<div class="agileits-box">
-<header class="agileits-box-header clearfix">
-<h3>Statistics</h3>
-	<div class="toolbar">
-		<div class="pull-left">
-			<div class="btn-group">
-				<a href="#" class="btn btn-default btn-xs">Daily</a>
-				<a href="#" class="btn btn-default btn-xs active">Monthly</a>
-				<a href="#" class="btn btn-default btn-xs">Yearly</a>
-			</div>
-		</div>
-		<div class="pull-right">
-			<div class="btn-group">
-			  <a aria-expanded="false" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
-				Export <i class="fa fa-angle-down"></i>
-			  </a>
-			  <ul class="dropdown-menu pull-right" role="menu">
-				<li><a href="#">Export as PDF</a></li>
-				<li><a href="#">Export as CSV</a></li>
-				<li><a href="#">Export as PNG</a></li>
-				<li class="divider"></li>
-				<li><a href="#">Separated link</a></li>
-			  </ul>
-			</div>
-			<a href="#" class="btn btn-primary btn-xs"><i class="fa fa-cog"></i></a>
-		</div>
-	</div>
-</header>
-<div class="agileits-box-body clearfix">
-<div id="hero-area"></div>
-</div>
-</div>
-</div>
-	<!--//agileinfo-grap-->
+
+
+
+
 
 	
 <!-- script-for sticky-nav -->

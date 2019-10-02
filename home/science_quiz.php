@@ -28,14 +28,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <link rel="stylesheet" href="css/icon-font.min.css" type='text/css' />
 <!-- //lined-icons -->
 </head> 
-<script>
-	function technology(){
-		window.location.href = "technology_quiz.php";
-	}
-	function science(){
-		window.location.href = "science_quiz.php";
-	}
-</script>
 <?php
 	function logout() {
 		session_start();
@@ -93,7 +85,7 @@ $username = $_SESSION["username"];
 				</div>
 		<div class="four-grids">
 					<div class="col-md-6 four-grid">
-						<div class="four-agileits" onclick="technology()">
+						<div class="four-agileits" id="technology">
 							<div class="icon">
 								<img src="images/technology.png" height="100px" width="100px" />
 								<!--<i class="glyphicon glyphicon-user" aria-hidden="true"></i>-->
@@ -107,7 +99,7 @@ $username = $_SESSION["username"];
 						</div>
 					</div>
 					<div class="col-md-6 four-grid">
-						<div class="four-agileinfo" onclick="science()">
+						<div class="four-agileinfo" id="science">
 							<div class="icon">
 							<img src="images/science.png" height="100px" width="100px" />
 								<!--<i class="glyphicon glyphicon-list-alt" aria-hidden="true"></i>-->
