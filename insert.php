@@ -20,7 +20,8 @@ $INSERT = "INSERT Into tbl_register (First_Name, Last_Name, EmailId, addr, phone
 
 if(mysqli_query($conn, $INSERT))
 {
-echo "New record created successfully";
+    header("Location: ./index.php"); /* Redirect browser */
+    exit();
 }
 else
 {
