@@ -100,28 +100,35 @@ $username = $_SESSION["username"];
 				?>  
 
 				<?php
+				$sql = "SELECT * FROM tbl_quiz";
 
-                  $q_id = trim(mysqli_real_escape_string($_GET['qid'])); 
+				if($result = mysqli_query($conn, $sql)){
+				if(mysqli_num_rows($result) > 0){
 
-                  $r = mysqli_query($conn, "select * from tbl_quiz where qid = '".$q_id."'");
+				  
                   
-                  while($rs = mysqli_fetch_array($r))
-                  {
+					while($row = mysqli_fetch_array($result))
+						{
                       ?>
                     <tr>
-						<th colspan="2" style="text-align:center"><h2><?php echo $rs['question']?></h2></th>
+						<th colspan="2" style="text-align:center"><h2><?php echo $row['question']?></h2></th>
 						</tr>0
 						<tr>
                             
-							<td  style="text-align:center;background-color:#B4A796;margin:20px"><input type="radio" name="answer" value="<?php $rs['a']?>"><h4><?php echo $rs['a']?></h4></td>
-							<td  style="text-align:center;background-color:#e1e1e1;margin:20px"><input type="radio" name="answer" value="<?php $rs['b']?>"><h4><?php echo $rs['b']?></h4></td>
+							<td  style="text-align:center;background-color:#B4A796;margin:20px"><input type="radio" name="answer" value="<?php $row['a']?>"><h4><?php echo $row['a']?></h4></td>
+							<td  style="text-align:center;background-color:#e1e1e1;margin:20px"><input type="radio" name="answer" value="<?php $row['b']?>"><h4><?php echo $row['b']?></h4></td>
 						</tr>
 						<tr>
-							<td style="text-align:center;background-color:#e1e1e1;margin:20px"><input type="radio" name="answer" value="<?php $rs['c']?>"><h4><?php echo $rs['c']?></h4></td>
-							<td style="text-align:center;background-color:#B4A796;margin:20px"><input type="radio" name="answer" value="<?php $rs['d']?>"><h4><?php echo $rs['d']?></h4></td>
+							<td style="text-align:center;background-color:#e1e1e1;margin:20px"><input type="radio" name="answer" value="<?php $row['c']?>"><h4><?php echo $row['c']?></h4></td>
+							<td style="text-align:center;background-color:#B4A796;margin:20px"><input type="radio" name="answer" value="<?php $row['d']?>"><h4><?php echo $row['d']?></h4></td>
 						</tr>
                         <?php
-                  }  
+				  }  
+				} else
+				{
+					echo "No records matching your query were found.";
+				}
+			}
                     
 					?>
 				 
