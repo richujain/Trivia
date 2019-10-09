@@ -25,7 +25,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	session_start();
 	if (! empty($_SESSION['logged_in']))
 	{
-		header("Location: home/admin_panel.php"); /* Redirect browser */
+		header("Location: home/index.php"); /* Redirect browser */
     	exit();
 	}
 ?>

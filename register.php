@@ -44,11 +44,6 @@
 		</div>
 	</div>
 	<!-- //agileits -->
-	<!-- copyright -->
-	<div class="w3-agile-copyright">
-		<p class="agileinfo"> © 2019 Trivia Quiz. All rights reserved | Design by <a href="" target="_blank">Trivia</a></p>
-	</div>
-	<!-- //copyright -->
 	<!-- js -->
 	<script src="js/jquery-2.2.3.min.js"></script>
 	<script src='js/jquery.validate.min.js'></script>
