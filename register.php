@@ -35,6 +35,29 @@
 					<input class='form-control w3l' id='pass' name="pass" placeholder='Password' type='password'><span class='glyphicon glyphicon-ok form-control-feedback'></span>
 				</div>
 				
+				
+				<div class='form-group has-feedback w3ls'>
+					<label class='control-label sr-only' for='First_Name'>First Name</label>
+					<input class='form-control' id='First_Name' name="First_Name" placeholder='First Name' type='text'>
+					<span class='glyphicon glyphicon-ok form-control-feedback'></span>
+				</div>
+				<div class='form-group has-feedback agile'>
+					<label class='control-label sr-only' for='Last_Name'>Last Name</label>
+					<input class='form-control w3l' id='Last_Name' name="Last_Name" placeholder='Last Name' type='text'><span class='glyphicon glyphicon-ok form-control-feedback'></span>
+				</div>
+				<div class='form-group has-feedback agile'>
+					<label class='control-label sr-only' for='EmailId'>Email ID</label>
+					<input class='form-control w3l' id='EmailId' name="EmailId" placeholder='Username' type='text'><span class='glyphicon glyphicon-ok form-control-feedback'></span>
+				</div>
+
+				<div class='form-group has-feedback agile'>
+					<label class='control-label sr-only' for='addr'>Address</label>
+					<input class='form-control w3l' id='addr' name="addr" placeholder='Address' type='text'><span class='glyphicon glyphicon-ok form-control-feedback'></span>
+				</div>
+				<div class='form-group has-feedback agile'>
+					<label class='control-label sr-only' for='phone'>Phone</label>
+							<input class='form-control w3l' id="phone" name='phone' placeholder='Phone Number' type='text'><span class='glyphicon glyphicon-ok form-control-feedback'></span>
+				</div>
 				<div class='submit w3-agile'>
 					<input class='btn btn-lg' type="submit" value="SUBMIT">
 				</div>
