@@ -115,22 +115,36 @@ $username = $_SESSION["username"];
   			<center>
   			<table width= 70%>
 				<?php
-
+// read variable 
 				$numbers = $_SESSION["numbers"];
 				$count = $_SESSION["count"];
 				$correctanswercount = $_SESSION["correctanswercount"];
-				
+				$quiz_category = "technology";
 				if($count>=14){
-					echo "count is " .$count;
-					unset($_SESSION['count']);
-					unset($_SESSION['numbers']);
-					header("Location: index.php"); /* Redirect browser */
-   					exit();
+					$lid = $_SESSION["lid"];
+					$today = date("d/m/Y");
+					$total = $count - 1;
+					$INSERT = "INSERT into tbl_results (lid, score,total, date, quiz_category) values('".$lid."','".$correctanswercount."','".$total."','".$today."','technology')";
+					if(mysqli_query($conn, $INSERT))
+					{
+						unset($_SESSION['count']);
+						unset($_SESSION['numbers']);
+						unset($_SESSION['correctanswercount']);
+						$_SESSION["quiz_type"] = "technology";
+						header("Location: result.php"); /* Redirect browser */
+						exit();
+					}
+					else
+					{
+					echo "Error: " . $INSERT . "<br>" .mysqli_error($conn);
+					}
+					
 				}
 				if(!$numbers){
 					$numbers = range(1, 15);
 					shuffle($numbers);
 					$count = 1;
+					$correctanswercount = 0;
 					session_start();
 					$_SESSION["numbers"] = $numbers;
 					$_SESSION["count"] = $count;
@@ -142,28 +156,40 @@ $username = $_SESSION["username"];
 					$count++;
 					$_SESSION["count"] = $count;
 					$correct_answer = $_POST['correct_answer'];
-					echo $correct_answer;
+					if($correct_answer == "a"){
+						$correctanswercount++;
+						$_SESSION["correctanswercount"] = $correctanswercount;
+					}
 					onCreate($count);
 				}
 				if(isset($_POST['option2'])){
 					$count++;
 					$_SESSION["count"] = $count;
 					$correct_answer = $_POST['correct_answer'];
-					echo $correct_answer;
+					if($correct_answer == "b"){
+						$correctanswercount++;
+						$_SESSION["correctanswercount"] = $correctanswercount;
+					}
 					onCreate($count);
 				}
 				if(isset($_POST['option3'])){
 					$count++;
 					$_SESSION["count"] = $count;
 					$correct_answer = $_POST['correct_answer'];
-					echo $correct_answer;
+					if($correct_answer == "c"){
+						$correctanswercount++;
+						$_SESSION["correctanswercount"] = $correctanswercount;
+					}
 					onCreate($count);
 				}
 				if(isset($_POST['option4'])){
 					$count++;
 					$_SESSION["count"] = $count;
 					$correct_answer = $_POST['correct_answer'];
-					echo $correct_answer;
+					if($correct_answer == "d"){
+						$correctanswercount++;
+						$_SESSION["correctanswercount"] = $correctanswercount;
+					}
 					onCreate($count);
 				}
 				if(isset($_POST['quit'])){
@@ -266,7 +292,7 @@ $username = $_SESSION["username"];
 				</tr>
 				<tr>
 					<td>
-					<div style="background-color:#962d5e;" class="button">Correct Answers : </div></td>	
+					<div style="background-color:#962d5e;" class="button">Correct Answers : <?php echo $correctanswercount ?></div></td>	
 					</td>
 				</tr>
 			</table>	
