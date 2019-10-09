@@ -163,7 +163,7 @@ $quiz_category=$_POST["quiz_category"];
 
 
 
-$i="INSERT Into tbl_quiz (qid, question, a, b, c, d, correct_answer, quiz_category) values('','".$_POST["question"]."','".$_POST["a"]."','".$_POST["b"]."',''".$_POST["c"]."','".$_POST["d"]."','".$_POST["correct_answer"]."','".$_POST["quiz_category"]."')"; 
+$i="INSERT Into tbl_quiz (question, a, b, c, d, correct_answer, quiz_category) values('".$_POST["question"]."','".$_POST["a"]."','".$_POST["b"]."','".$_POST["c"]."','".$_POST["d"]."','".$_POST["correct_answer"]."','".$_POST["quiz_category"]."')"; 
 
 if(mysqli_query($conn, $i))
 {

@@ -3,7 +3,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Quiz Admin panel</title>
+<title>Results</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="" />
@@ -99,7 +99,7 @@ $username = $_SESSION["username"];
 								<h1><a href="index.php">Trivia</a></h1>
 							</div>
 							<div class="profile_details w3l" style="background-color:grey;margin-left:150px;">
-								  <h1  style="color:white;"><b> Admin  Panel</b></h1>
+								  <h1  style="color:white;"><b>Results</b></h1>
 							</div>
 						 
 						<div class="profile_details w3l" style="float: right">		
@@ -109,7 +109,7 @@ $username = $_SESSION["username"];
 											<div class="profile_img">	
 												<span class="prfil-img"><img src="images/user.png" alt=""> </span> 
 												<div class="user-name">
-													<p><?php echo "Hello Admin"?></p>
+                                                <p><?php echo "Hello " . $username ?></p>
 													<span></span>
 												</div>
 												<i class="fa fa-angle-down"></i>
@@ -137,12 +137,30 @@ $username = $_SESSION["username"];
     <th>Date</th>
     <th>Quiz Category</th>
   </tr>
-  <tr>
-    <td>Alfreds Futterkiste</td>
-    <td>Maria Anders</td>
-    <td>Germany</td>
-  </tr>
-</table>    
+                <?php 
+                $lid = $_SESSION["lid"];
+                $sql = "SELECT * FROM tbl_results where lid='$lid'";
+				
+					if($result = mysqli_query($conn, $sql)){
+					if(mysqli_num_rows($result) > 0){
+	
+					  
+					  
+						while($row = mysqli_fetch_array($result))
+							{
+                                
+						  ?>
+                            <tr>
+                            <td><?php echo "" . $row['score'] . "/" . $row['total'] ?></td>
+                            <td><?php echo $row['date']?></td>
+                            <td><?php echo $row['quiz_category']?></td>
+                        </tr>
+                            <?php
+                         }
+                        }
+                    } 
+                         ?>
+                </table>    
 			</center>
 			
 			

@@ -101,7 +101,7 @@ $username = $_SESSION["username"];
 											</div>	
 										</a>
 										<ul class="dropdown-menu drp-mnu">
-											<li> <a href="#"><i class="fa fa-user"></i> Profile</a> </li> 
+											<li> <a href="result.php"><i class="fa fa-user"></i> Results</a> </li> 
 											<li> <a href="index.php?logout=true"><i class="fa fa-sign-out"></i> Logout</a> </li>
 										</ul>
 									</li>
@@ -130,7 +130,6 @@ $username = $_SESSION["username"];
 						unset($_SESSION['count']);
 						unset($_SESSION['numbers']);
 						unset($_SESSION['correctanswercount']);
-						$_SESSION["quiz_type"] = "technology";
 						header("Location: result.php"); /* Redirect browser */
 						exit();
 					}
@@ -285,11 +284,7 @@ $username = $_SESSION["username"];
 			</center>
 			<center>
 			<table style="margin-top:40px;">
-				<tr>
-					<td>
-					<div style="background-color:#962d5e;" class="button">Question : <?php echo $count ?> </div></td>	
-					</td>
-				</tr>
+				
 				<tr>
 					<td>
 					<div style="background-color:#962d5e;" class="button">Correct Answers : <?php echo $correctanswercount ?></div></td>	

@@ -24,36 +24,15 @@
 		<div class="w3-agileits-info">
 			<form class='form animate-form' id='form1' action="insert.php" method="post">
 				<p class="w3agileits">Sign Up</p>
-				<div class='form-group has-feedback w3ls'>
-					<label class='control-label sr-only' for='First_Name'>First_Name</label>
-					<input class='form-control' id='First_Name' name="First_Name" placeholder='First Name' type='text'>
-					<span class='glyphicon glyphicon-ok form-control-feedback'></span>
-				</div>
+				
 				<div class='form-group has-feedback agile'>
-					<label class='control-label sr-only' for='Last_Name'>Last_Name</label>
-					<input class='form-control w3l' id='Last_Name' name="Last_Name" placeholder='Last Name' type='text'><span class='glyphicon glyphicon-ok form-control-feedback'></span>
-				</div>
-				<div class='form-group has-feedback agile'>
-					<label class='control-label sr-only' for='EmailId'>EmailId</label>
-					<input class='form-control w3l' id='EmailId' name="EmailId" placeholder='Email ID' type='text'><span class='glyphicon glyphicon-ok form-control-feedback'></span>
-				</div>
-
-				<div class='form-group has-feedback agile'>
-					<label class='control-label sr-only' for='addr'>addr</label>
-					<input class='form-control w3l' id='addr' name="addr" placeholder='Address' type='text'><span class='glyphicon glyphicon-ok form-control-feedback'></span>
-				</div>
-				<div class='form-group has-feedback agile'>
-					<label class='control-label sr-only' for='phone'>phone</label>
-							<input class='form-control w3l' id="phone" name='phone' placeholder='Phone Number' type='text'><span class='glyphicon glyphicon-ok form-control-feedback'></span>
+					<label class='control-label sr-only' for='EmailId'>Email ID</label>
+					<input class='form-control w3l' id='EmailId' name="EmailId" placeholder='Username' type='text'><span class='glyphicon glyphicon-ok form-control-feedback'></span>
 				</div>
 				
 				<div class='form-group has-feedback agile'>
-					<label class='control-label sr-only' for='pass'>Pass</label>
-					<input class='form-control w3l' id='pass' name="pass" placeholder='Create Password' type='password'><span class='glyphicon glyphicon-ok form-control-feedback'></span>
-				</div>
-				<div class='form-group has-feedback agile'>
-					<label class='control-label sr-only' for='confirm_password'>Confirm_Password</label>
-					<input class='form-control w3l' id='password' name="confirm_password" placeholder='Retype Password' type='password'><span class='glyphicon glyphicon-ok form-control-feedback'></span>
+					<label class='control-label sr-only' for='pass'>Password</label>
+					<input class='form-control w3l' id='pass' name="pass" placeholder='Password' type='password'><span class='glyphicon glyphicon-ok form-control-feedback'></span>
 				</div>
 				
 				<div class='submit w3-agile'>

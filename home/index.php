@@ -33,7 +33,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		window.location.href = "technology_quiz.php";
 	}
 	function science(){
-		window.location.href = "technology_quiz.php";
+		window.location.href = "science_quiz.php";
 	}
 </script>
 <?php
@@ -79,7 +79,7 @@ $username = $_SESSION["username"];
 											</div>	
 										</a>
 										<ul class="dropdown-menu drp-mnu">
-											<li> <a href="#"><i class="fa fa-user"></i> Profile</a> </li> 
+											<li> <a href="result.php"><i class="fa fa-user"></i> Results</a> </li> 
 											<li> <a href="index.php?logout=true"><i class="fa fa-sign-out"></i> Logout</a> </li>
 										</ul>
 									</li>
@@ -96,7 +96,7 @@ $username = $_SESSION["username"];
 							</div>
 							<div class="four-text">
 								<h3>Information Technology</h3>
-								<h4> 0  </h4>
+								<h4>   </h4>
 								
 							</div>
 							
@@ -110,7 +110,7 @@ $username = $_SESSION["username"];
 							</div>
 							<div class="four-text">
 								<h3>Science</h3>
-								<h4>0</h4>
+								<h4></h4>
 
 							</div>
 							

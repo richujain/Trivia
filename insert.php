@@ -5,21 +5,13 @@ if ($conn->connect_error)
 {
  die("Connection failed: " . $conn->connect_error);
 }
-$t_id = $_POST['t_id'];
-$First_Name = $_POST['First_Name'];
-$Last_Name = $_POST['Last_Name'];
-$EmailId = $_POST['EmailId'];
-$addr = $_POST['addr'];
-$phone = $_POST['phone'];
-$pass = $_POST['pass'];
-$confirm_password = $_POST['confirm_password'];
+
 
 echo "$pass";
 echo "$addr";
-$INSERT = "INSERT Into tbl_register (First_Name, Last_Name, EmailId, addr, phone, pass, confirm_password) values('".$_POST["First_Name"]."','".$_POST["Last_Name"]."','".$_POST["EmailId"]."','".$_POST["addr"]."','".$_POST["phone"]."','".$_POST["pass"]."','".$_POST["confirm_password"]."')";
-
+$INSERT = "INSERT Into tbl_login (username, password, usertype,status) values('".$_POST["EmailId"]."','".$_POST["pass"]."','1','1')";
 if(mysqli_query($conn, $INSERT))
-{
+{   
     header("Location: ./index.php"); /* Redirect browser */
     exit();
 }
@@ -27,4 +19,27 @@ else
 {
 echo "Error: " . $INSERT . "<br>" .mysqli_error($conn);
 }
+
+/*
+
+$result=mysql_query("SELECT count(*) as total from tbl_login");
+            $data=mysql_fetch_assoc($result);
+            $total_count =  $data['total'];
+            $total_count++;
+            echo $total_count;
+
+
+
+            $INSERT = "INSERT Into tbl_register (lid,first_name, last_name, address, phone) values('$total_count','".$_POST["First_Name"]."','".$_POST["Last_Name"]."','".$_POST["addr"]."','".$_POST["phone"]."')";
+echo $INSERT;
+            if(mysqli_query($conn, $INSERT))
+            {
+                
+            }
+            else
+            {
+            echo "Error: " . $INSERT . "<br>" .mysqli_error($conn);
+            }
+
+            */
 ?>
