@@ -1,8 +1,4 @@
-<!--
-Author: W3layouts
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
+
 -->
 <?php error_reporting(0); ?>
 <!DOCTYPE HTML>
@@ -13,21 +9,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-<!-- Bootstrap Core CSS -->
 <link href="css/bootstrap.min.css" rel='stylesheet' type='text/css' />
-<!-- Custom CSS -->
 <link href="css/style.css" rel='stylesheet' type='text/css' />
 <link rel="stylesheet" href="css/morris.css" type="text/css"/>
-<!-- Graph CSS -->
 <link href="css/font-awesome.css" rel="stylesheet"> 
-<!-- jQuery -->
 <script src="js/jquery-2.1.4.min.js"></script>
-<!-- //jQuery -->
 <link href='//fonts.googleapis.com/css?family=Roboto:700,500,300,100italic,100,400' rel='stylesheet' type='text/css'/>
 <link href='//fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
-<!-- lined-icons -->
 <link rel="stylesheet" href="css/icon-font.min.css" type='text/css' />
-<!-- //lined-icons -->
 </head>
 <?php
 
@@ -164,7 +153,7 @@ $username = $_SESSION["username"];
 <br/>
 <br/>
 
-<div class="form-group">
+                                <div class="form-group">
                                     <label class="col-sm-2 control-label">Quiz  Category</label>
                                     <div class="col-sm-8">
                                         <select multiple="" class="form-control1" name="quiz_category">
@@ -199,12 +188,12 @@ $i="INSERT Into tbl_quiz (question, a, b, c, d, correct_answer, quiz_category) v
 
 if(mysqli_query($conn, $i))
 {
-    header("Location: ./index.php"); /* Redirect browser */
+    header("Location: admin_view_question.php"); /* Redirect browser */
     exit();
 }
 else
 {
-echo "Error: " . $i . "<br>" .mysqli_error($conn);
+echo "Error: ";
 }
 
 }
@@ -250,14 +239,6 @@ echo "Error: " . $i . "<br>" .mysqli_error($conn);
 <div class="inner-block">
 
 </div>
-<!--inner block end here-->
-<!--copy rights start here-->
-<!--
-<div class="copyrights">
-     <p>© 2016 Pooled. All Rights Reserved | Design by  <a href="http://w3layouts.com/" target="_blank">W3layouts</a> </p>
-</div>  
-    -->
-<!--COPY rights end here-->
 </div>
 </div>
   

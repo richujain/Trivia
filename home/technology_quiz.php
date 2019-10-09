@@ -1,9 +1,4 @@
-<!--
-Author: W3layouts
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
+
 <?php error_reporting(0) ?>
 <!DOCTYPE HTML>
 <html>
@@ -294,14 +289,6 @@ $username = $_SESSION["username"];
 			</center>
 			<div class="clearfix"></div>
 		</div>
-<!--//four-grids here-->
-
-
-
-
-
-	
-<!-- script-for sticky-nav -->
 		<script>
 		$(document).ready(function() {
 			 var navoffeset=$(".header-main").offset().top;
@@ -316,27 +303,15 @@ $username = $_SESSION["username"];
 			 
 		});
 		</script>
-		<!-- /script-for sticky-nav -->
-<!--inner block start here-->
 <div class="inner-block">
 
 </div>
-<!--inner block end here-->
-<!--copy rights start here-->
-<!--
-<div class="copyrights">
-	 <p>© 2016 Pooled. All Rights Reserved | Design by  <a href="http://w3layouts.com/" target="_blank">W3layouts</a> </p>
-</div>	
-	-->
-<!--COPY rights end here-->
 </div>
 </div>
   
 <script src="js/jquery.nicescroll.js"></script>
 <script src="js/scripts.js"></script>
-<!-- Bootstrap Core JavaScript -->
    <script src="js/bootstrap.min.js"></script>
-   <!-- /Bootstrap Core JavaScript -->	
 
 </body>
 </html>

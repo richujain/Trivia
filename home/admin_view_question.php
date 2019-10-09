@@ -134,7 +134,7 @@ $username = $_SESSION["username"];
 											</div>	
 										</a>
 										<ul class="dropdown-menu drp-mnu">
-											<li> <a href="result.php"><i class="fa fa-user"></i> Results</a> </li> 
+											<li> <a href="admin_panel.php"><i class="fa fa-user"></i> Add Questions</a> </li> 
 											<li> <a href="index.php?logout=true"><i class="fa fa-sign-out"></i> Logout</a> </li>
 										</ul>
 									</li>
@@ -165,7 +165,7 @@ $username = $_SESSION["username"];
 					if(mysqli_num_rows($result) > 0){
 	
 					  
-					  ?><form action="delete_question.php" method="get"><?php
+					  ?><form action="delete_question.php" method="post"><?php
 						while($row = mysqli_fetch_array($result))
 							{
                                 
@@ -178,7 +178,7 @@ $username = $_SESSION["username"];
 							<td><?php echo $row['d']?></td>
 							<td><?php echo $row['correct_answer']?></td>
 							<td><?php echo $row['quiz_category']?></td>
-							<td align="center"><input type="radio" name="delete_option" value="$row['qid']"/></td>
+							<td align="center"><input type="radio" name="delete_option" value="<?php echo $row['qid']?>"/></td>
                         </tr>
                             <?php
 						 }
