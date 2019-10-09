@@ -114,7 +114,6 @@ $username = $_SESSION["username"];
 						<th colspan="2" style="text-align:center"><h2><?php echo $row['question']?></h2></th>
 						</tr>0
 						<tr>
-                            
 							<td  style="text-align:center;background-color:#B4A796;margin:20px"><input type="radio" name="answer" value="<?php $row['a']?>"><h4><?php echo $row['a']?></h4></td>
 							<td  style="text-align:center;background-color:#e1e1e1;margin:20px"><input type="radio" name="answer" value="<?php $row['b']?>"><h4><?php echo $row['b']?></h4></td>
 						</tr>
