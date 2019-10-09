@@ -56,9 +56,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	</div>	
 	<!-- //agileits -->
 	<!-- copyright -->
+	<!--
 	<div class="w3-agile-copyright">
 		<p class="agileinfo"> © 2017 Animated Login Form . All rights reserved | Design by <a href="http://w3layouts.com/" target="_blank">W3layouts</a></p>
 	</div>
+-->
 	<!-- //copyright -->  
 	<!-- js -->
 	<script src="js/jquery-2.2.3.min.js"></script>

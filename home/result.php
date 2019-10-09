@@ -118,7 +118,7 @@ $username = $_SESSION["username"];
 											</div>	
 										</a>
 										<ul class="dropdown-menu drp-mnu">
-											<li> <a href="#"><i class="fa fa-user"></i> Profile</a> </li> 
+											<li> <a href="result.php"><i class="fa fa-user"></i> Results</a> </li> 
 											<li> <a href="index.php?logout=true"><i class="fa fa-sign-out"></i> Logout</a> </li>
 										</ul>
 									</li>
@@ -133,7 +133,8 @@ $username = $_SESSION["username"];
   			
     <table id="customers">
   <tr>
-    <th>Score</th>
+	<th>Score</th>
+	<th>%</th>
     <th>Date</th>
     <th>Quiz Category</th>
   </tr>
@@ -151,8 +152,29 @@ $username = $_SESSION["username"];
                                 
 						  ?>
                             <tr>
-                            <td><?php echo "" . $row['score'] . "/" . $row['total'] ?></td>
-                            <td><?php echo $row['date']?></td>
+							<td><?php echo "" . $row['score'] . "/" . $row['total'] ?></td>
+							<?php 
+								if($row['total'] == 13){
+									$score = $row['score'];
+									$perc = $score * 7.69;
+									?>
+									<td><?php echo $perc?></td>
+								<?php }
+								else if($row['total'] == 10){
+									$score = $row['score'];
+									$perc = $score * 10;
+									?>
+									<td><?php echo $perc?></td>
+								<?php
+								}
+							
+							?>
+							<td><?php echo $row['date']?></td>
+							
+
+									
+
+
                             <td><?php echo $row['quiz_category']?></td>
                         </tr>
                             <?php
